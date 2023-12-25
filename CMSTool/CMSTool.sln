@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CMSTool", "CMSTool.csproj", "{52C7B2F7-160F-4C83-B15A-887572F0ACF9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business", "..\Business\Business.csproj", "{ECEC85F9-B618-47E9-93D8-E256C79D1AC4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMStool.data", "..\CMStool.data\CMStool.data.csproj", "{33F1EF81-1B46-4378-867F-8D93B60A906B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{52C7B2F7-160F-4C83-B15A-887572F0ACF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52C7B2F7-160F-4C83-B15A-887572F0ACF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52C7B2F7-160F-4C83-B15A-887572F0ACF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52C7B2F7-160F-4C83-B15A-887572F0ACF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECEC85F9-B618-47E9-93D8-E256C79D1AC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECEC85F9-B618-47E9-93D8-E256C79D1AC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECEC85F9-B618-47E9-93D8-E256C79D1AC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECEC85F9-B618-47E9-93D8-E256C79D1AC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33F1EF81-1B46-4378-867F-8D93B60A906B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33F1EF81-1B46-4378-867F-8D93B60A906B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33F1EF81-1B46-4378-867F-8D93B60A906B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33F1EF81-1B46-4378-867F-8D93B60A906B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8A8C5EBC-3DE9-482B-9170-2C99A16B8794}
+	EndGlobalSection
+EndGlobal
