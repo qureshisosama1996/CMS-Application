@@ -14,7 +14,7 @@ builder.Services.AddDbContext<CMSDbContext>(options =>
 });
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddSingleton<IGetAvaliabeNews,GetAvaliabeNews>();
+builder.Services.AddSingleton<IGetAvaliabeNews, GetAvaliabeNews>();
 builder.Services.AddSingleton<IAvaliableonCMS, AvaliableonCMS>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>

@@ -26,7 +26,7 @@ namespace CMSTool.Controllers
 
         }
 
-        [HttpGet("processAI")]
+        [HttpGet("processAIdata")]
 
         public async Task<ActionResult> getdata()
         {

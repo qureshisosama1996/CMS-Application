@@ -15,7 +15,7 @@ namespace Business.Services
 
         public Task<string> ProcessAIRequest(List<CryptoData> cryptodata);
 
-        public  Task<List<AI_Data>> Getprocesseddata()
+        public Task<List<AI_Data>> Getprocesseddata();
 
 
 

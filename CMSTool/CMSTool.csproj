@@ -6,12 +6,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
-  <ItemGroup>
-    <None Remove="clientapp\src\components\OpenDialogAIprocess.vue" />
-  </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="clientapp\src\components\OpenDialogAIprocess.vue" />
+    <None Include="clientapp\Views\_ViewStart.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -34,7 +31,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Business\Business.csproj" />
-    <ProjectReference Include="..\CMStool.data\CMStool.data.csproj" />
   </ItemGroup>
 
 </Project>
