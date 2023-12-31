@@ -16,6 +16,8 @@ builder.Services.AddDbContext<CMSDbContext>(options =>
 builder.Services.AddControllersWithViews();
 builder.Services.AddSingleton<IGetAvaliabeNews, GetAvaliabeNews>();
 builder.Services.AddSingleton<IAvaliableonCMS, AvaliableonCMS>();
+builder.Services.AddScoped<IProcessAI, ProcessAI>();
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {

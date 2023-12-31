@@ -13,7 +13,7 @@
                       :items="items"
                       :loading="loading"
                       :search="search"
-                      :items-per-page="5"
+                      :items-per-page="10"
                       item-value="headline"
                       show-select></v-data-table>
     </v-card>

@@ -9,7 +9,8 @@
                           variant="outlined"
                           hide-details></v-text-field>
             <v-btn color="primary"
-                   @click="openDialog">
+                   @click="openDialog"
+>
                 Open Dialog
             </v-btn>
         </template>
@@ -17,10 +18,13 @@
                       :items="items"
                       :loading="loading"
                       :search="search"
-                      :items-per-page="5"
+                      :items-per-page="10"
                       item-value="headline"
                       show-select></v-data-table>
-        <open-process :selecteditemvalue="selected"></open-process>
+        <open-process 
+:selecteditemvalue="selectedItems" 
+@close-dialog="dialog = false"
+ :dialogvalue="dialog"></open-process>
     </v-card>
 </template>
 
@@ -35,6 +39,7 @@
                 selected: [],
                 items: [],
                 search: '',
+                dialog:false,
             };
         },
         mounted() {
@@ -44,6 +49,13 @@
         components: {
             OpenProcess
         },
+        computed: {
+    selectedItems() {
+      return this.selected.map((headline) =>
+        this.items.find((item) => item.headline === headline)
+      );
+    },
+},
         methods: {
             async fetchData() {
                 try {

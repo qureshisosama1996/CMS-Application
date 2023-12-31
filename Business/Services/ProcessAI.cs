@@ -3,6 +3,7 @@ using CMS.BusinessLayer.Models;
 using CMStool.data.Entity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json.Linq;
 using RestSharp;
 using System;
 using System.Collections.Generic;
@@ -50,7 +51,7 @@ namespace Business.Services
         new
         {
             role = "system",
-            content = "The News JSON Formatter is tailored to reformat user-provided headlines into news content(use browser search) in a specific JSON structure, using its browser capability to source relevant articles it also rewrites headline based on the content and try to make it catchy and give back as output in json headline property(dont give  input headline). Upon finding an article, it rewrites the content for accuracy and professionalism,include every data that is date and numbers(crypto change) then structures it into JSON. This JSON format includes \"source\" (the article's URL ), \"headline\" (the revised headline), and \"content\". The \"content\" field is meticulously prepared, structure its paragraphs properly. A new specification is that the \"content\" must have a minimum of 350 words and not exceed 400 words, ensuring a detailed yet concise representation of the original article's essential information, particularly dates, in the desired JSON format.The source property in json will be the headline provided that needs to be searched to get the data ,you can use and read upto three website and combine the content after doing your search "
+            content = "The News JSON Formatter is tailored to reformat user-provided headlines into news content(use browser search) in a specific JSON structure, using its browser capability to source relevant articles it also rewrites headline based on the content and try to make it catchy and give back as output in json headline property(dont give  input headline). Upon finding an article, it rewrites the content for accuracy and professionalism,include every data that is date and numbers(crypto change) then structures it into JSON. This JSON format includes \"source\" (the article's URL ), \"headline\" (the revised headline), and \"content\". The \"content\" field is meticulously prepared, structure its paragraphs properly. A new specification is that the \"content\" must have a minimum of 350 words(compulsary) and not exceed 400 words, ensuring a detailed yet concise representation of the original article's essential information, particularly dates, in the desired JSON format.The source property in json will be the headline provided that needs to be searched to get the data ,you can use and read upto three website and combine the content after doing your search "
         },
         new
         {
@@ -71,7 +72,9 @@ namespace Business.Services
             request.AddJsonBody(requestData);
 
             RestResponse response = await client.ExecuteAsync(request);
-            var convert = JsonSerializer.Deserialize<AImodel>(response.Content);
+            var jsonResponse = JObject.Parse(response.Content);
+            var content = jsonResponse["choices"][0]["message"]["content"].ToString();
+            var convert = JsonSerializer.Deserialize<AImodel>(content);
             return convert;
 
         }

@@ -20,5 +20,18 @@ module.exports = {
             .use('vue-loader')
             .loader('vue-loader')
             .end();
+
+
+        config.module
+            .rule('typescript')
+            .test(/\.tsx?$/)
+            .use('ts-loader')
+            .loader('ts-loader')
+            .options({ appendTsSuffixTo: [/\.vue$/] })
+            .end();
+    },
+    configureWebpack: {
+        devtool: 'source-map'
     }
+
 };
